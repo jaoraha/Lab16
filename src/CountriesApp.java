@@ -1,3 +1,7 @@
+// Title: Lab No 16
+// Author: John Aoraha
+// Date: May 9, 2018
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -34,16 +38,13 @@ public class CountriesApp {
 			System.out.println("2 - Add a country");
 			System.out.println("3 - Exit");
 			System.out.println();
-			System.out.println("Enter a menu number: ");
-
-			input = scan.nextInt();
-			input = scan.nextInt();
+			
+			input = CountriesTextFile.getInt(scan, "Enter a menu number: ", 1, 3);
 
 			if (input == 1) {
 				CountriesTextFile.readFromFile();
 			} else if (input == 2) {
 				System.out.println("Enter the country to add: ");
-				scan.nextLine();
 				country = scan.nextLine();
 				CountriesTextFile.writeToFile(country);
 				System.out.println("This country has been saved!");

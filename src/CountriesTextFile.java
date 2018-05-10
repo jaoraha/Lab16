@@ -1,7 +1,12 @@
+// Title: Lab No 16
+// Author: John Aoraha
+// Date: May 9, 2018
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class CountriesTextFile {
 
@@ -44,7 +49,7 @@ public class CountriesTextFile {
 
 	}
 
-	//
+
 	public static void createFile() {
 
 		Path filePath = Paths.get("countries.txt");
@@ -60,5 +65,36 @@ public class CountriesTextFile {
 
 		System.out.println("File Name: " + filePath.getFileName());
 		System.out.println("Absolute Path: " + filePath.toAbsolutePath());
+	}
+	
+	public static int getInt(Scanner sc, String prompt) {
+		int i = 0;
+		boolean isValid = false;
+		while (isValid == false) {
+			System.out.print(prompt);
+			if (sc.hasNextInt()) {
+				i = sc.nextInt();
+				isValid = true;
+			} else {
+				System.out.println("Error! Invalid integer value. Try again.");
+			}
+			sc.nextLine();
+		}
+		return i;
+	}
+
+	public static int getInt(Scanner sc, String prompt, int min, int max) {
+		int i = 0;
+		boolean isValid = false;
+		while (isValid == false) {
+			i = getInt(sc, prompt);
+			if (i < min)
+				System.out.println("Please choose a valid menu option.");
+			else if (i > max)
+				System.out.println("Please choose a valid menu option.");
+			else
+				isValid = true;
+		}
+		return i;
 	}
 }
