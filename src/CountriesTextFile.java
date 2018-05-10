@@ -15,7 +15,7 @@ public class CountriesTextFile {
 			BufferedReader reader = new BufferedReader(fr);
 
 			String line = reader.readLine();
-		
+
 			while (line != null) {
 				System.out.println(line);
 				line = reader.readLine();
@@ -43,7 +43,8 @@ public class CountriesTextFile {
 		}
 
 	}
-//
+
+	//
 	public static void createFile() {
 
 		Path filePath = Paths.get("countries.txt");
@@ -59,21 +60,5 @@ public class CountriesTextFile {
 
 		System.out.println("File Name: " + filePath.getFileName());
 		System.out.println("Absolute Path: " + filePath.toAbsolutePath());
-	}}
-//
-//	public static void createDirectory(String path) {
-//		Path dirPath = Paths.get(path);
-//
-//		if (Files.notExists(dirPath)) {
-//
-//			try {
-//				Files.createDirectories(dirPath);
-//			} catch (IOException e) {
-//				System.out.println("Something went wrong!");
-//			}
-//
-//		}
-//	}
-//
-//}
-//
+	}
+}
